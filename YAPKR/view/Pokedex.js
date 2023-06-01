@@ -1,15 +1,52 @@
-import {Button, Text, View} from "react-native";
-import {DefaultTheme} from "@react-navigation/native";
-import {useContext, useState} from "react";
-import Context from "../components/Context";
+import {Text, View} from "react-native";
+import React, {useContext, useState} from "react";
+import {Avatar, Button, Icon, ListItem} from "@rneui/themed";
+import {Context} from "../components/Context";
+import {FlatList} from "react-native-gesture-handler";
 
+const pokemons = [{
+    id: 1,
+    name: 'Bulbasaur',
+    type: 'Grass',
+    hidden_hability: 'Chlorophyll',
+    url: 'https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/250px-0001Bulbasaur.png'
+
+}]
+
+// Color By type
 
 const Pokedex = () =>{
-    const {dispatch} = useContext(Context);
+    const {state,dispatch} = useContext(Context);
+
+    function getPokemons ({item: pokemon}){
+        return(
+            <ListItem
+                containerStyle={{backgroundColor: state.theme.colors.card, borderRadius:50}}
+            >
+                <ListItem.Content>
+                    <ListItem.Title style={{color: state.theme.colors.text, paddingBottom: 15, fontSize:25}}>{pokemon.name}</ListItem.Title>
+                    <View style={{backgroundColor: '#A7DB8D', borderRadius:10, padding:2, borderColor:'#7cbe46', borderWidth:1}}>
+                        <ListItem.Subtitle style={{color: state.theme.colors.text}}>{pokemon.type}</ListItem.Subtitle>
+                    </View>
+                </ListItem.Content>
+                <View style={{
+                    backgroundColor:'#A7DB8D',
+                    borderRadius:20,
+                    borderColor:'#7cbe46',
+                    borderWidth:1,
+                    alignItems:'flex-start',
+                    }}>
+                    <Avatar size={100} source={{uri: pokemon.url}}/>
+                </View>
+            </ListItem>
+        )
+    }
     return(
         <View>
-            <Text style={{color:'white'}}>Hi</Text>
-            <Button title={'Tema'} onPress={dispatch({type: 'toggleTheme'})}/>
+            <FlatList
+                data={pokemons}
+                renderItem={getPokemons}
+                keyExtractor={poke => poke.id.toString()}/>
         </View>
     )
 }

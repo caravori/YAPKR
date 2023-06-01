@@ -1,30 +1,35 @@
-import {createContext, useReducer, useState} from "react";
+import React, {createContext, useReducer} from "react";
 import {DarkTheme, DefaultTheme} from "@react-navigation/native";
 
-
-const Context = createContext({})
+const Context = createContext({});
 
 const initialState = {
-    Theme: DarkTheme,
-}
+    theme: DarkTheme,
+    icon: 'sun-o',
+};
 
-const actions ={
-    toggleTheme(state, action){
-        const toggle = state.Theme === DarkTheme? DefaultTheme : DarkTheme
-        return{...state, Theme: toggle }
-    }
-}
+const reducer = (state, action) => {
+    const fn = actions[action.type];
+    return !fn ? state : fn(state, action);
+};
 
-const context = (props) =>{
-    const [state, dispatch] = useReducer(reducer, initialState)
-    function reducer(state, action) {
-        const fn = actions [action.type]
-        return !fn ? state : fn(state, action)
-    }
-    return(
-       <Context.Provider value={{state,dispatch}}>
-           {props.children}
-       </Context.Provider>
-    )
-}
-export default context
+const actions = {
+    toggleTheme(state) {
+        const toggle = state.theme === DarkTheme ? DefaultTheme : DarkTheme;
+        const moon = state.theme === DarkTheme ? 'moon-o': 'sun-o';
+        console.warn(state.theme.colors)
+        return {...state, theme: toggle, icon: moon};
+    },
+};
+
+const ContextProvider = (props) => {
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    return (
+        <Context.Provider value={{state, dispatch}}>
+            {props.children}
+        </Context.Provider>
+    );
+};
+
+export {ContextProvider,Context};
