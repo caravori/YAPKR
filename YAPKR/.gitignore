@@ -11,6 +11,7 @@ npm-debug.*
 web-build/
 yatpk-auth-firebase-adminsdk-9jqry-ad860aff1a.json
 firebaseConfig.js
+
 # macOS
 .DS_Store
 
