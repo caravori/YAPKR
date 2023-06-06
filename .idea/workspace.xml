@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabf471b-acca-4e95-b578-fa8f55d47b74" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.expo/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/Styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/Styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/view/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Navigator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,24 +31,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/caravori/faculdade/YAPKR",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/opt/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/caravori/faculdade/YAPKR&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/opt/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -72,7 +74,8 @@
       <workItem from="1685627718909" duration="17112000" />
       <workItem from="1686049615713" duration="1180000" />
       <workItem from="1686052054322" duration="379000" />
-      <workItem from="1686053511281" duration="3638000" />
+      <workItem from="1686053511281" duration="3721000" />
+      <workItem from="1686059253911" duration="4857000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,14 @@
+import {StyleSheet} from "react-native";
+
+const Style = StyleSheet.create({
+    DrawerLine: {
+
+    },
+    Text:{
+        fontSize: 20,
+
+    }
+})
 
 
-const Tema = {
-
-}
-
-export default Tema
+export default Style
