@@ -3,6 +3,7 @@ import React, {useContext, useState} from "react";
 import {Avatar, Button, Icon, ListItem} from "@rneui/themed";
 import {Context} from "../components/Context";
 import {FlatList} from "react-native-gesture-handler";
+import {Colors} from '../Styles'
 
 const pokemons = [{
     id: 1,
@@ -26,14 +27,14 @@ const Pokedex = () =>{
                 <ListItem.Content>
                     <ListItem.Title style={{color: state.theme.colors.text, paddingBottom: 15, fontSize:25}}>{pokemon.name}</ListItem.Title>
                     <View style={{backgroundColor: '#A7DB8D', borderRadius:10, padding:2, borderColor:'#7cbe46', borderWidth:1}}>
-                        <ListItem.Subtitle style={{color: state.theme.colors.text}}>{pokemon.type}</ListItem.Subtitle>
+                        <ListItem.Subtitle style={{color: 'black'}}>{pokemon.type}</ListItem.Subtitle>
                     </View>
                 </ListItem.Content>
                 <View style={{
                     backgroundColor:'#A7DB8D',
                     borderRadius:20,
-                    borderColor:'#7cbe46',
-                    borderWidth:1,
+                    borderColor:Colors.grass,
+                    borderWidth:6,
                     alignItems:'flex-start',
                     }}>
                     <Avatar size={100} source={{uri: pokemon.url}}/>
