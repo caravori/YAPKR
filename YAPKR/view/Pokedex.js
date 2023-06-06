@@ -21,7 +21,7 @@ const Pokedex = () =>{
     function getPokemons ({item: pokemon}){
         return(
             <ListItem
-                containerStyle={{backgroundColor: state.theme.colors.card, borderRadius:50}}
+                containerStyle={{backgroundColor: state.theme.colors.card, borderRadius:20, margin:8}}
             >
                 <ListItem.Content>
                     <ListItem.Title style={{color: state.theme.colors.text, paddingBottom: 15, fontSize:25}}>{pokemon.name}</ListItem.Title>

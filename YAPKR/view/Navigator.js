@@ -5,14 +5,15 @@ import Pokedex from "./Pokedex";
 import {Context} from "../components/Context";
 import {TouchableOpacity} from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
+import {createDrawerNavigator} from "@react-navigation/drawer";
 
 const Stack = createNativeStackNavigator();
-
+const Drawer = createDrawerNavigator();
 
 const Navigator = () => {
     const {state, dispatch} = useContext(Context)
 
-    const ligthSwitch=()=>{
+    const lightSwitch=()=>{
         return(
             <TouchableOpacity onPress={()=>dispatch({type:'toggleTheme'})}>
                 <FontAwesome name={state.icon} size={20} color={state.theme.colors.text}/>
@@ -21,10 +22,11 @@ const Navigator = () => {
     }
     return (
         <NavigationContainer theme={state.theme}>
-            <Stack.Navigator initialRouteName="Pokedex" screenOptions={{
-                headerRight:()=> ligthSwitch()}}>
-                <Stack.Screen name="Pokedex" component={Pokedex}/>
-            </Stack.Navigator>
+            <Drawer.Navigator initialRouteName="Pokedex" screenOptions={{
+                headerRight:()=> lightSwitch(),
+            }}>
+                <Drawer.Screen name="Pokedex" component={Pokedex}/>
+            </Drawer.Navigator>
         </NavigationContainer>
     );
 };

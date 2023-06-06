@@ -6,6 +6,7 @@ const Context = createContext({});
 const initialState = {
     theme: DarkTheme,
     icon: 'sun-o',
+    // pokemons: TODO: Load pokemons if in memory, else get from api
 };
 
 const reducer = (state, action) => {
@@ -17,7 +18,6 @@ const actions = {
     toggleTheme(state) {
         const toggle = state.theme === DarkTheme ? DefaultTheme : DarkTheme;
         const moon = state.theme === DarkTheme ? 'moon-o': 'sun-o';
-        console.warn(state.theme.colors)
         return {...state, theme: toggle, icon: moon};
     },
 };
