@@ -7,6 +7,9 @@
     <list default="true" id="cabf471b-acca-4e95-b578-fa8f55d47b74" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/Styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/Styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/components/Context.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/components/Context.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +75,11 @@
       <workItem from="1686049615713" duration="1180000" />
       <workItem from="1686052054322" duration="379000" />
       <workItem from="1686053511281" duration="3721000" />
-      <workItem from="1686059253911" duration="8049000" />
+      <workItem from="1686059253911" duration="8211000" />
+      <workItem from="1686071905686" duration="7000" />
+      <workItem from="1686072749201" duration="337000" />
+      <workItem from="1686077077283" duration="1054000" />
+      <workItem from="1686577729850" duration="4686000" />
     </task>
     <servers />
   </component>

@@ -75,7 +75,7 @@ const ContextProvider = (props) => {
     useEffect(()=>{
         async function fetchData(){
             const loadedState = await loadCache()
-            if(loadedState == {} || state.pokemons.length == 0){
+            if(loadedState === {} || state.pokemons.length === 0){
                 const pokemons = await requestAPI(151);
                 dispatch({type: 'updatePokemon',payload: {pokemons}})
             }
