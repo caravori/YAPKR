@@ -1,14 +1,13 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Pokedex from "./Pokedex";
 import {Context} from "../components/Context";
-import {Image, Text, TouchableOpacity} from "react-native";
-import {FontAwesome} from '@expo/vector-icons';
+import {Image, Text, TouchableOpacity, View} from "react-native";
 import {createDrawerNavigator, DrawerContentScrollView, DrawerItem} from "@react-navigation/drawer";
 import Style from "../Styles";
 import DrawerSection from "react-native-paper/src/components/Drawer/DrawerSection";
-import {Icon} from "@rneui/themed";
+import {Switch} from "react-native-paper";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -16,23 +15,42 @@ const Drawer = createDrawerNavigator();
 
 const Navigator = (props) => {
     const {state, dispatch} = useContext(Context)
-
-
+    const [isDarkTheme, setIsDarkTheme] = useState(state.isDark);
+    const toggleTheme = () => {
+        setIsDarkTheme(!isDarkTheme);
+        dispatch({type: 'toggleTheme'})
+    };
     const CustomDrawer = (props) => {
         return (
             <>
                 <DrawerContentScrollView {...props}>
-                    <Image style={{width: 120, height: 120, alignSelf: 'center'}}
+                    <Image style={{width: 120, height: 120, alignSelf: 'center', marginTop: 15, marginBottom: 10}}
                            source={{uri: 'https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png'}}/>
-                    <DrawerSection>
+                    <DrawerSection title={'Login'} showDivider={false} style={{borderBottomColor: 'red', borderBottomWidth:2}}>
+                        <TouchableOpacity>
+                            <View style={{
+                                borderRadius: 10, backgroundColor: 'red', marginLeft:20, marginBottom:20,width:60,height:40, flex:1, alignItems:'center', justifyContent:'center'}}>
+                                <Text style={[Style.Text, {fontWeight:'bold'}]}>Login</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </DrawerSection>
+                    <DrawerSection style={{borderBottomColor: 'red', borderBottomWidth: 2}} showDivider={false}>
                         <DrawerItem label={() =>
                             <Text style={[Style.Text, {color: state.theme.colors.text}]}>Pokedex</Text>}
                                     onPress={() => props.navigation.navigate(Pokedex)}/>
                     </DrawerSection>
-                    <TouchableOpacity style={{flex: 1, alignSelf: 'flex-end', justifyContent: 'flex-end', margin: 20}}
-                                      onPress={() => dispatch({type: 'toggleTheme'})}>
-                        <FontAwesome name={state.icon} size={30} color={state.theme.colors.text}/>
-                    </TouchableOpacity>
+                    <View
+                        style={{
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            marginVertical: 30,
+                            marginHorizontal: 20
+                        }}>
+                        <Text style={{color: state.theme.colors.text, fontSize: 15}}>Dark Mode</Text>
+                        <View style={{marginLeft: '50%'}}>
+                            <Switch value={isDarkTheme} onValueChange={toggleTheme}/>
+                        </View>
+                    </View>
                 </DrawerContentScrollView>
             </>
         )
@@ -46,8 +64,5 @@ const Navigator = (props) => {
     );
 };
 
-/*
-*
-* */
 
 export default Navigator;

@@ -7,6 +7,7 @@ const Context = createContext({});
 
 const initialState = {
     theme: DarkTheme,
+    isDark: true,
     icon: 'sun-o',
     pokemons: []
 };
@@ -65,7 +66,8 @@ const actions = {
     toggleTheme(state) {
         const toggle = state.theme === DarkTheme ? DefaultTheme : DarkTheme;
         const moon = state.theme === DarkTheme ? 'moon-o': 'sun-o';
-        saveCache({...state, theme: toggle, icon: moon});
+        const isDark = !state.isDark
+        saveCache({...state, theme: toggle, icon: moon, isDark: isDark});
         return {...state, theme: toggle, icon: moon};
     },
 };

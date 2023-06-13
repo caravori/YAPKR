@@ -8,8 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/Styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/Styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/components/Context.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/components/Context.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/view/LoadingScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/LoadingScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/view/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Navigator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +80,7 @@
       <workItem from="1686072749201" duration="337000" />
       <workItem from="1686077077283" duration="1054000" />
       <workItem from="1686577729850" duration="4686000" />
+      <workItem from="1686656534449" duration="6928000" />
     </task>
     <servers />
   </component>
