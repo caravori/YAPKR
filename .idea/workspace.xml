@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabf471b-acca-4e95-b578-fa8f55d47b74" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/YAPKR/view/Pokemon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/Styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/Styles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/components/Context.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/components/Context.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/LoadingScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/LoadingScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/view/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Navigator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" afterDir="false" />
     </list>
@@ -37,8 +35,8 @@
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/caravori/faculdade/YAPKR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Clicavel__Pokemon&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/caravori/faculdade/maps&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -80,7 +78,9 @@
       <workItem from="1686072749201" duration="337000" />
       <workItem from="1686077077283" duration="1054000" />
       <workItem from="1686577729850" duration="4686000" />
-      <workItem from="1686656534449" duration="6928000" />
+      <workItem from="1686656534449" duration="8272000" />
+      <workItem from="1686681110407" duration="3424000" />
+      <workItem from="1686685371860" duration="2827000" />
     </task>
     <servers />
   </component>

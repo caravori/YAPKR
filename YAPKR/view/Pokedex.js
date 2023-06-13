@@ -1,17 +1,18 @@
-import {View, StyleSheet} from "react-native";
+import {StyleSheet, TouchableOpacity, View} from "react-native";
 import React, {useContext} from "react";
 import {Avatar, ListItem} from "@rneui/themed";
 import {Context} from "../components/Context";
 import {FlatList} from "react-native-gesture-handler";
 import {Colors} from '../Styles'
 import LoadingScreen from "./LoadingScreen";
+import Pokemon from "./Pokemon";
 
-const Pokedex = () => {
+export function getColor(type) {
+    return [Colors[type], Colors[type + 'b']]
+}
+const Pokedex = (props) => {
     const {state} = useContext(Context);
 
-    function getColor(type) {
-        return [Colors[type], Colors[type + 'b']]
-    }
 
     function GetTypes({types: types}) {
         let colors1 = getColor(types[0].type.name)
@@ -48,17 +49,19 @@ const Pokedex = () => {
     function getPokemons({item: pokemon}) {
         let colors = getColor(pokemon.types[0].type.name)
         return (
-            <ListItem containerStyle={[styles.cardStyle, {backgroundColor: state.theme.colors.card}]}>
-                <ListItem.Content>
-                    <ListItem.Title style={[styles.ListTitle, {color: state.theme.colors.text}]}>
-                        {pokemon.name}
-                    </ListItem.Title>
-                    <GetTypes types={pokemon.types}/>
-                </ListItem.Content>
-                <View style={[styles.avatar, {backgroundColor: colors[0], borderColor: colors[1]}]}>
-                    <Avatar size={100} source={{uri: pokemon.sprites.other['official-artwork'].front_default}}/>
-                </View>
-            </ListItem>
+            <TouchableOpacity onPress={()=> props.navigation.navigate("Pokemon",{pokemon:{pokemon}}) }>
+                <ListItem containerStyle={[styles.cardStyle, {backgroundColor: state.theme.colors.card}]}>
+                    <ListItem.Content>
+                        <ListItem.Title style={[styles.ListTitle, {color: state.theme.colors.text}]}>
+                            {pokemon.name}
+                        </ListItem.Title>
+                        <GetTypes types={pokemon.types}/>
+                    </ListItem.Content>
+                    <View style={[styles.avatar, {backgroundColor: colors[0], borderColor: colors[1]}]}>
+                        <Avatar size={100} source={{uri: pokemon.sprites.other['official-artwork'].front_default}}/>
+                    </View>
+                </ListItem>
+            </TouchableOpacity>
         )
     }
 
