@@ -68,8 +68,14 @@ const actions = {
     addToTeam(state,action){
         const pokemon = action.payload;
         const updatedState = {...state,team: [...state.team,pokemon]}
-        console.warn(pokemon);
-        console.warn(updatedState);
+        saveCache(updatedState);
+        return updatedState;
+    },
+    removeFromTeam(state,action){
+        const pokemon = action.payload;
+        console.warn(state.team);
+        const updatedState = {...state,team: [...state.team.filter((poke)=>poke.id != pokemon.id)]}
+        console.warn(updatedState.team);
         saveCache(updatedState);
         return updatedState;
     },
@@ -90,12 +96,9 @@ const ContextProvider = (props) => {
             if(state.pokemons.length === 0){
                 const pokemons = await requestAPI(151);
                 dispatch({type: 'updatePokemon',payload: {pokemons}})
-                dispatch({type: 'addToTeam',payload: pokemons[0]})
-
             }
             else {
                 dispatch({type: 'load', payload: loadedState});
-                dispatch({type: 'addToTeam',payload: loadedState.pokemons[0]})
             }
         }
         fetchData();

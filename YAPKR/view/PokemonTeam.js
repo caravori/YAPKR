@@ -10,7 +10,7 @@ const PokemonTeam = () => {
   
   function renderItem({item: pokemon}){
     return (
-      <PokemonListItem pokemon={pokemon}/>
+      <PokemonListItem action={''} pokemon={pokemon}/>
     )
   }
   return (

@@ -1,9 +1,9 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Colors } from '../Styles';
-import { Avatar, ListItem } from '@rneui/themed';
+import { Avatar, Button, Icon, ListItem } from '@rneui/themed';
 
-const PokemonListItem = ({pokemon}) => {
+const PokemonListItem = ({pokemon, action}) => {
     function getColor(type) {
         return [Colors[type], Colors[type + "b"]];
       }
@@ -55,32 +55,37 @@ const PokemonListItem = ({pokemon}) => {
       }
       let colors = getColor(pokemon.types[0].type.name);
       return (
-        <ListItem
-          containerStyle={[
-            styles.cardStyle,
-            { backgroundColor: colors[0], borderColor: colors[1] },
-          ]}
-        >
-          <View
-            style={[
+        <TouchableOpacity onPress={()=>{action}}>
+
+          <ListItem
+            containerStyle={[
+              styles.cardStyle,
+              { backgroundColor: colors[0], borderColor: colors[1] },
             ]}
           >
-            <Avatar
-              size={100}
-              source={{
-                uri: pokemon.sprites.other["official-artwork"].front_default,
-              }}
-            />
-          </View>
-          <ListItem.Content>
-            <ListItem.Title
-              style={[styles.ListTitle, { color: "black" }]}
+            <View
+              style={[
+              ]}
             >
-              {pokemon.name}
-            </ListItem.Title>
-            <GetTypes types={pokemon.types} />
-          </ListItem.Content>
-        </ListItem>
+              <Avatar
+                size={100}
+                source={{
+                  uri: pokemon.sprites.other["official-artwork"].front_default,
+                }}
+              />
+            </View>
+            <ListItem.Content>
+              
+              <ListItem.Title
+                style={[styles.ListTitle, { color: "black" }]}
+              >
+                {pokemon.name}
+              </ListItem.Title>
+              <GetTypes types={pokemon.types} />
+            </ListItem.Content>
+            
+          </ListItem>
+        </TouchableOpacity>
       )
 }
 
@@ -89,7 +94,9 @@ const styles = StyleSheet.create({
     ListTitle: {
         paddingBottom: 15,
         fontSize: 25,
-        textTransform: 'capitalize'
+        textTransform: 'capitalize',
+        justifyContent: 'space-between',
+        
     },
     avatar: {
         borderRadius: 20,
