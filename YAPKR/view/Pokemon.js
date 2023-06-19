@@ -25,7 +25,7 @@ const Pokemon = ({route}) => {
                    TODO: Para cada tipo, um background diferente tem alguns nos assets. 10 no total. Temos 16 tipos. Faltam 6 backgrounds
                 -->
                 <GetAsset/>
-                <View style={{alignItems:'center'}}>
+                <View style={{alignItems: 'center'}}>
                     <Avatar source={{uri: pokemon.sprites.other['official-artwork'].front_default}} size={200}/>
                 </View>
             </View>

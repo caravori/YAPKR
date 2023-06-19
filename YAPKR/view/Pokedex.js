@@ -5,11 +5,11 @@ import {Context} from "../components/Context";
 import {FlatList} from "react-native-gesture-handler";
 import {Colors} from '../Styles'
 import LoadingScreen from "./LoadingScreen";
-import Pokemon from "./Pokemon";
 
 export function getColor(type) {
     return [Colors[type], Colors[type + 'b']]
 }
+
 const Pokedex = (props) => {
     const {state} = useContext(Context);
 
@@ -49,7 +49,7 @@ const Pokedex = (props) => {
     function getPokemons({item: pokemon}) {
         let colors = getColor(pokemon.types[0].type.name)
         return (
-            <TouchableOpacity onPress={()=> props.navigation.navigate("Pokemon",{pokemon:{pokemon}}) }>
+            <TouchableOpacity onPress={() => props.navigation.navigate("Pokemon", {pokemon: {pokemon}})}>
                 <ListItem containerStyle={[styles.cardStyle, {backgroundColor: state.theme.colors.card}]}>
                     <ListItem.Content>
                         <ListItem.Title style={[styles.ListTitle, {color: state.theme.colors.text}]}>

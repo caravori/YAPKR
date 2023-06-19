@@ -49,6 +49,9 @@ const Navigator = (props) => {
                             <DrawerItem label={() =>
                                 <Text style={[Style.Text, {color: state.theme.colors.text}]}>Pokedex</Text>}
                                         onPress={() => props.navigation.navigate(Pokedex, props)}/>
+                            <DrawerItem label={() =>
+                                <Text style={[Style.Text, {color: state.theme.colors.text}]}>Meu time</Text>}
+                                        onPress={() => props.navigation.navigate("Meu time")}/>
                         </DrawerSection>
                         <View
                             style={{
@@ -60,29 +63,6 @@ const Navigator = (props) => {
                             <View style={{marginLeft: '50%'}}>
                                 <Switch value={isDarkTheme} onValueChange={toggleTheme} color={'red'}/>
                             </View>
-
-                        </TouchableOpacity>
-                    </DrawerSection>
-                    <DrawerSection style={{borderBottomColor: 'red', borderBottomWidth: 2}} showDivider={false}>
-                        <DrawerItem label={() =>
-                            <Text style={[Style.Text, {color: state.theme.colors.text}]}>Pokedex</Text>}
-                                    onPress={() => props.navigation.navigate(Pokedex)}/>
-                    </DrawerSection>
-                    <DrawerSection style={{borderBottomColor: 'red', borderBottomWidth: 2}} showDivider={false}>
-                        <DrawerItem label={() =>
-                            <Text style={[Style.Text, {color: state.theme.colors.text}]}>Meu time</Text>}
-                                    onPress={() => props.navigation.navigate("Meu time")}/>
-                    </DrawerSection>
-                    <View
-                        style={{
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                            marginVertical: 30,
-                            marginHorizontal: 20
-                        }}>
-                        <Text style={{color: state.theme.colors.text, fontSize: 15}}>Dark Mode</Text>
-                        <View style={{marginLeft: '50%'}}>
-                            <Switch value={isDarkTheme} onValueChange={toggleTheme}/>
                         </View>
                 </DrawerContentScrollView>
             </>
