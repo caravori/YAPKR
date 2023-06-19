@@ -19,7 +19,7 @@ const LoadingScreen = () => {
             Animated.timing(spinValue, {
                 toValue: 1,
                 duration: 3000,
-                easing: Easing.quad,
+                easing: Easing.linear,
                 useNativeDriver: true,
             })
         ).start();

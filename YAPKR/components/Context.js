@@ -9,7 +9,8 @@ const initialState = {
     theme: DarkTheme,
     isDark: true,
     icon: 'sun-o',
-    pokemons: []
+    pokemons: [],
+    team: []
 };
 
 const reducer = (state, action) => {
@@ -55,6 +56,7 @@ async function requestAPI(numberPokemons){
 const actions = {
     load(state,action){
         const loadedCache = action.payload;
+        console.log(loadedCache)
         return {...loadedCache.state}
     },
     updatePokemon(state,action){
@@ -62,6 +64,20 @@ const actions = {
         const updatedState = {...state, pokemons: updated.pokemons}
         saveCache(updatedState);
         return updatedState
+    },
+    addToTeam(state,action){
+        const pokemon = action.payload;
+        const updatedState = {...state,team: [...state.team,pokemon]}
+        saveCache(updatedState);
+        return updatedState;
+    },
+    removeFromTeam(state,action){
+        const pokemon = action.payload;
+        console.warn(state.team);
+        const updatedState = {...state,team: [...state.team.filter((poke)=>poke.id != pokemon.id)]}
+        console.warn(updatedState.team);
+        saveCache(updatedState);
+        return updatedState;
     },
     toggleTheme(state) {
         const toggle = state.theme === DarkTheme ? DefaultTheme : DarkTheme;
@@ -77,7 +93,7 @@ const ContextProvider = (props) => {
     useEffect(()=>{
         async function fetchData(){
             const loadedState = await loadCache()
-            if(loadedState === {} || state.pokemons.length === 0){
+            if(state.pokemons.length === 0){
                 const pokemons = await requestAPI(151);
                 dispatch({type: 'updatePokemon',payload: {pokemons}})
             }
