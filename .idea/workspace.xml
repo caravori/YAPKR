@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabf471b-acca-4e95-b578-fa8f55d47b74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/YAPKR/view/Pokemon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YAPKR/assets/bug.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YAPKR/assets/electric.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YAPKR/assets/fairy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YAPKR/assets/fire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YAPKR/assets/ghost.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YAPKR/assets/grass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YAPKR/assets/ground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YAPKR/assets/ice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YAPKR/assets/normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YAPKR/assets/rock.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Navigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/Styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/Styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokemon.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,28 +34,31 @@
     <dismissed value="$PROJECT_DIR$/YAPKR/package.json" />
   </component>
   <component name="ProjectId" id="2QbWhhaXuU5CayyiR5BKKaFXTns" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Clicavel__Pokemon&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/caravori/faculdade/maps&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/opt/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Clicavel__Pokemon",
+    "last_opened_file_path": "/home/caravori/faculdade/YAPKR/YAPKR/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/opt/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -56,6 +68,9 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/YAPKR/assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/YAPKR" />
     </key>
@@ -81,6 +96,7 @@
       <workItem from="1686656534449" duration="8272000" />
       <workItem from="1686681110407" duration="3424000" />
       <workItem from="1686685371860" duration="2827000" />
+      <workItem from="1686747771813" duration="2975000" />
     </task>
     <servers />
   </component>
