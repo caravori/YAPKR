@@ -60,37 +60,19 @@ const Pokemon = ({route}) => {
             </ScrollView>
             {!state.team.includes(pokemon)?
                 <TouchableOpacity onPress={()=> dispatch({type:'addToTeam', payload: pokemon})}>
-                    <View style={{
-                        position: 'absolute',
-                        width: 50,
-                        height: 50,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        right: 20,
-                        bottom: 20,
-                        borderRadius: 50,
-                        backgroundColor: color[0],
-                        elevation:2
-
-                    }}>
-                        <FontAwesome name={'plus'} size={40} color={'rgba(69,69,69,0.77)'}/>
+                    <View style={[
+                        {backgroundColor: color[0]},
+                        styles.floatingButtom
+                    ]}>
+                        <FontAwesome name={'plus'} size={30} color={'rgba(69,69,69,0.77)'}/>
                     </View>
                 </TouchableOpacity>:
                 <TouchableOpacity onPress={()=> dispatch({type:'removeFromTeam', payload: pokemon})}>
-                    <View style={{
-                        position: 'absolute',
-                        width: 50,
-                        height: 50,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        right: 20,
-                        bottom: 20,
-                        borderRadius: 50,
-                        backgroundColor: color[0],
-                        elevation:2
-
-                    }}>
-                        <FontAwesome name={'minus'} size={40} color={'rgba(69,69,69,0.77)'}/>
+                    <View style={[
+                        {backgroundColor: color[0]},
+                        styles.floatingButtom
+                    ]}>
+                        <FontAwesome name={'minus'} size={30} color={'rgba(69,69,69,0.77)'}/>
                     </View>
                 </TouchableOpacity>
             }
@@ -155,6 +137,17 @@ const styles = {
         marginRight: 60,
         margin: 5,
     },
+    floatingButtom:{
+        position: 'absolute',
+        width: 50,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        right: 20,
+        bottom: 20,
+        borderRadius: 50,
+        elevation:2
+    }
 };
 
 export default Pokemon;
