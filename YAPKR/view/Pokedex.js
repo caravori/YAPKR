@@ -1,10 +1,13 @@
-import {StyleSheet, TouchableOpacity, View} from "react-native";
-import React, {useContext, useState} from "react";
+import {StyleSheet, TouchableOpacity, View, TextInput} from "react-native";
+import React, {useContext, useEffect, useState} from "react";
 import {Avatar, ListItem} from "@rneui/themed";
 import {Context} from "../components/Context";
 import {FlatList} from "react-native-gesture-handler";
 import {Colors} from '../Styles'
 import LoadingScreen from "./LoadingScreen";
+import { Button } from "react-native-paper";
+import { FontAwesome } from "@expo/vector-icons";
+import { transparent } from "react-native-paper/src/styles/themes/v2/colors";
 
 export function getColor(type) {
     return [Colors[type], Colors[type + 'b']]
@@ -12,8 +15,14 @@ export function getColor(type) {
 
 const Pokedex = (props) => {
     const {state} = useContext(Context);
-
-
+    const [searchValue, setSearchValue] = useState('');
+    const [pokemonList, setPokemonList] = useState(state.pokemons);
+    const [searchOpen, setSearchOpen] = useState(false);
+    useEffect(
+        ()=>{
+            setPokemonList(state.pokemons)
+        }
+        ,[state.pokemons]);
 
     function GetTypes({types: types}) {
         let colors1 = getColor(types[0].type.name)
@@ -67,14 +76,64 @@ const Pokedex = (props) => {
         )
     }
 
+    function searchList(name){
+        if(name == '' || name == undefined || !name){
+            setPokemonList(state.pokemons);
+        }
+        const filteredList = state.pokemons.filter(pokemon => pokemon.name.includes(name) || pokemon.types[0].type.name.includes(name) || pokemon.types[1]?.type.name.includes(name));
+        setPokemonList(filteredList);
+    }
+    useEffect(()=>{
+        setPokemonList(state.pokemons);
+    },[]);
+
+    function toggleSearch(){
+        searchList('');
+        setSearchOpen(!searchOpen);
+    }
+    
     return (
         <View>
-            {state.pokemons.length ?
+            {searchOpen ?
+            
+                <View style={{flexDirection:'row',width: window.width, margin: 5, borderColor:"rgba(0,0,0,0.3)", borderWidth: 2, borderRadius: 50}}>
+                    <TextInput style={{paddingLeft:10,borderColor: transparent,flex: 20, height: 35, backgroundColor: "rgba(255,255,255,0)"}} onChangeText={searchList}/>
+                    <Button style={{flex: 1, width: 35, height: 35, backgroundColor: "rgba(255,255,255,0)"}} icon="close" onPress={()=> toggleSearch()}>
+                    </Button>
+                </View>
+                :
+                ''
+            }
+            {state.pokemons.length ?(
+                <>
                 <FlatList
-                    data={state.pokemons}
+                    data={pokemonList}
                     renderItem={getPokemons}
                     keyExtractor={poke => poke.id}
                     maxToRenderPerBatch={30}/>
+                { !searchOpen ?
+
+                <TouchableOpacity onPress={()=> toggleSearch()}>
+                    <View style={{
+                        position: 'absolute',
+                        width: 50,
+                        height: 50,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        right: 20,
+                        bottom: 30,
+                        borderRadius: 50,
+                        backgroundColor: "#ee1515",
+                        elevation:2
+                    }}>
+                        <FontAwesome name={'search'} size={25} color={'rgba(255,255,255,0.77)'}/>
+                    </View>
+                </TouchableOpacity>
+                : ''
+
+                }
+                </>
+            )
                 : <LoadingScreen></LoadingScreen>
             }
         </View>
