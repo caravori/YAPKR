@@ -1,5 +1,5 @@
 import {StyleSheet, TouchableOpacity, View} from "react-native";
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {Avatar, ListItem} from "@rneui/themed";
 import {Context} from "../components/Context";
 import {FlatList} from "react-native-gesture-handler";
@@ -12,6 +12,7 @@ export function getColor(type) {
 
 const Pokedex = (props) => {
     const {state} = useContext(Context);
+    const [searchValue, setSearchValue] = useState('');
 
 
     function GetTypes({types: types}) {
@@ -62,6 +63,7 @@ const Pokedex = (props) => {
                     </View>
                 </ListItem>
             </TouchableOpacity>
+
         )
     }
 
@@ -80,7 +82,11 @@ const Pokedex = (props) => {
 }
 
 const styles = StyleSheet.create({
-        cardStyle: {borderRadius: 20, margin: 8},
+        cardStyle: {
+            borderRadius: 20,
+            margin: 5,
+            elevation: 3
+        },
         ListTitle: {
             paddingBottom: 15,
             fontSize: 25,
@@ -96,10 +102,14 @@ const styles = StyleSheet.create({
             padding: 8,
             borderWidth: 1,
             marginRight: 5,
+            elevation: 1
         },
         textTypes: {
-            color: 'black',
-            fontWeight: 'bold'
+            fontSize: 15,
+            color: '#ffffff',
+            fontWeight: 'bold',
+            textShadowColor: '#646464',
+            textShadowRadius: 1
         }
     }
 )

@@ -1,0 +1,11 @@
+
+export const bug = require('./bug.png')
+export const electric = require('./electric.png')
+export const fairy = require('./fairy.png')
+export const fire = require('./fire.png')
+export const ghost = require('./ghost.png')
+export const grass = require('./grass.png')
+export const ground = require('./ground.png')
+export const ice = require('./ice.png')
+export const normal = require('./normal.png')
+export const rock = require('./rock.png')
