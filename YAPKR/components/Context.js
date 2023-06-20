@@ -6,8 +6,8 @@ const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 const Context = createContext({});
 
 const initialState = {
-    theme: DarkTheme,
-    isDark: true,
+    theme: DefaultTheme ,
+    isDark: false,
     icon: 'sun-o',
     pokemons: [],
     team: []
@@ -74,7 +74,7 @@ const actions = {
     removeFromTeam(state,action){
         const pokemon = action.payload;
         console.warn(state.team);
-        const updatedState = {...state,team: [...state.team.filter((poke)=>poke.id != pokemon.id)]}
+        const updatedState = {...state,team: [...state.team.filter((poke)=>poke.id !== pokemon.id)]}
         console.warn(updatedState.team);
         saveCache(updatedState);
         return updatedState;

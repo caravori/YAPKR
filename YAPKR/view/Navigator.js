@@ -9,6 +9,8 @@ import Style from "../Styles";
 import DrawerSection from "react-native-paper/src/components/Drawer/DrawerSection";
 import {Switch} from "react-native-paper";
 import PokemonTeam from "./PokemonTeam";
+import Pokemon from "./Pokemon";
+import ItemList from "./ItemList";
 
 
 const Stack = createNativeStackNavigator();
@@ -52,6 +54,9 @@ const Navigator = (props) => {
                             <DrawerItem label={() =>
                                 <Text style={[Style.Text, {color: state.theme.colors.text}]}>Meu time</Text>}
                                         onPress={() => props.navigation.navigate("Meu time")}/>
+                            <DrawerItem label={()=>
+                                <Text style={[Style.Text,{color:state.theme.colors.text}]}>Lista de Itens</Text> }
+                                        onPress={()=> props.navigation.navigate(ItemList,props)}/>
                         </DrawerSection>
                         <View
                             style={{
@@ -73,6 +78,8 @@ const Navigator = (props) => {
             <Drawer.Navigator drawerContent={(props) => <CustomDrawer {...props}/> } >
                 <Drawer.Screen name="Pokedex" component={Pokedex}/>
                 <Drawer.Screen name="Meu time" component={PokemonTeam}/>
+                <Drawer.Screen name='Pokemon' component={Pokemon}/>
+                <Drawer.Screen name='Lista de Itens' component={ItemList}/>
             </Drawer.Navigator>
         </NavigationContainer>
     );

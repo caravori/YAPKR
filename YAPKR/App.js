@@ -8,7 +8,7 @@ import { Provider as PaperProvider } from 'react-native-paper';
 export default function App() {
   return (
       <>
-          <StatusBar hidden={true} />
+          <StatusBar />
           <PaperProvider>
               <ContextProvider>
                   <Navigator />
