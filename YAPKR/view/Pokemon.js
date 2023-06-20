@@ -49,9 +49,9 @@ const Pokemon = ({ route }) => {
                     <Text style={[styles.title, { color: state.theme.colors.text }]}>Habilidades</Text>
                     <View style={[styles.statContainer, { backgroundColor: color[1], alignItems: 'center' }]}>
                         <Text style={[styles.statText, { alignSelf: 'center' }]}>Normal</Text>
-                        <Ability abname={pokemon.abilities[0].ability.name.toUpperCase()} color="#696969" />
+                        <Ability abname={pokemon.abilities[0].ability.name.toUpperCase()} color={"rgba(105,105,105,0.46)"} />
                         <Text style={[styles.statText, { alignSelf: 'center' }]}>Hidden</Text>
-                        <Ability abname={pokemon.abilities[1]?.ability.name.toUpperCase()} color="#696969" />
+                        <Ability abname={pokemon.abilities[1]?.ability.name.toUpperCase()} color="rgba(105,105,105,0.46)" />
                     </View>
                 </View>
             </ScrollView>
@@ -71,7 +71,7 @@ const StatBar = ({ statName, statValue, statColor }) => {
 const Ability = ({ abname, color }) => {
     return (
         <View style={[styles.barAbility, { backgroundColor: color }]}>
-            <Text style={styles.statText}>{abname}</Text>
+            <Text style={[styles.statText,{fontSize: 20}]}>{abname}</Text>
         </View>
     );
 };
@@ -108,6 +108,7 @@ const styles = {
     barAbility: {
         alignItems: 'center',
         elevation: 1,
+        padding: 5,
         borderRadius: 20,
         marginLeft: 60,
         marginRight: 60,
