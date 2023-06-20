@@ -12,7 +12,7 @@ export function getColor(type) {
 
 const Pokedex = (props) => {
     const {state} = useContext(Context);
-    const [searchValue, setSearchValue] = useState('');
+
 
 
     function GetTypes({types: types}) {
