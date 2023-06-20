@@ -24,6 +24,8 @@ export const Colors = {
     electricb:  '#ecb849',
     normal:     '#CAC5BE',//done
     normalb:    '#bbb9b9',
+    steel:    '#9b9b9b',
+    steelb:    '#727272',
     poison:     '#944694',//missing asset
     poisonb:    '#a165a1',
     psychic:    '#E9457F',//missing asset

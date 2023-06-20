@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabf471b-acca-4e95-b578-fa8f55d47b74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/YAPKR/eas.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/Styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/Styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/components/Context.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/components/Context.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/eas.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/eas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokemon.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +96,7 @@
       <workItem from="1687261494726" duration="8637000" />
       <workItem from="1687283380260" duration="883000" />
       <workItem from="1687284298607" duration="416000" />
-      <workItem from="1687285733829" duration="697000" />
+      <workItem from="1687285733829" duration="3010000" />
     </task>
     <servers />
   </component>

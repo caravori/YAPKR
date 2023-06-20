@@ -73,9 +73,7 @@ const actions = {
     },
     removeFromTeam(state,action){
         const pokemon = action.payload;
-        console.warn(state.team);
         const updatedState = {...state,team: [...state.team.filter((poke)=>poke.id !== pokemon.id)]}
-        console.warn(updatedState.team);
         saveCache(updatedState);
         return updatedState;
     },
