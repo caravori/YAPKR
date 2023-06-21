@@ -92,8 +92,8 @@ const Pokedex = (props) => {
             {searchOpen ?
             
                 <View style={{flexDirection:'row',width: window.width, margin: 5, borderColor:"rgba(0,0,0,0.3)", borderWidth: 2, borderRadius: 50}}>
-                    <TextInput style={{paddingLeft:10,borderColor: transparent,flex: 20, height: 35, backgroundColor: "rgba(255,255,255,0)"}} onChangeText={searchList}/>
-                    <Button style={{flex: 1, width: 35, height: 35, backgroundColor: "rgba(255,255,255,0)"}} icon="close" onPress={()=> toggleSearch()}>
+                    <TextInput placeholder='Pesquise por nome ou tipo!' placeholderTextColor={state.theme.colors.text} style={{paddingLeft:10,borderColor: transparent,flex: 20, height: 35, backgroundColor: "rgba(255,255,255,0)",color: state.theme.colors.text}} onChangeText={searchList}/>
+                    <Button style={{flex: 1, width: 35, height: 35, backgroundColor: "rgba(255,255,255,0)" }} icon="close" onPress={()=> toggleSearch()}>
                     </Button>
                 </View>
                 :
