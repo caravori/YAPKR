@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {FlatList, ImageBackground, Text, TouchableOpacity, View} from 'react-native';
+import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import {Avatar} from '@rneui/themed';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Context} from '../components/Context';
@@ -11,11 +11,6 @@ const Pokemon = ({route}) => {
     const {state, dispatch} = useContext(Context);
     const {pokemon} = route.params.pokemon;
     const color = getColor(pokemon.types[0].type.name);
-    function renderMove({item: move}){
-        return (
-            <Text>{move.name}</Text>
-        )
-    }
     return (
         <View style={{flex: 1}}>
             <View style={{borderRadius: 20, elevation: 100, overflow: 'hidden'}}>
