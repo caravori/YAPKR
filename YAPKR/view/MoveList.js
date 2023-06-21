@@ -53,16 +53,16 @@ const Move = ({move}) => {
                         <ListItem.Title style={[styles.ListTitle, {color: state.theme.colors.text}]}>
                             {move.name}
                         </ListItem.Title>
-                        <Text style={{fontSize: 15, paddingBottom: 15, paddingRight: 5}}>
+                        <Text style={{fontSize: 15, paddingBottom: 15, paddingRight: 5, color: state.theme.colors.text}}>
                             {move.description}
                         </Text>
                         <GetType types={move.type}/>
                     </View>
                     <View style={{width: 100, flexDirection: 'column'}}>
-                        <Text style={{fontSize: 20}}>
+                        <Text style={{fontSize: 20, color: state.theme.dark ? "rgba(255,"+ (Math.floor(255 -( 255*(move.power/120)))) + ","+ (Math.floor(255 -( 255*(move.power/120)))) + ",1)" : "rgba("+ (Math.floor((move.power/100) * 255)) + ",0,0,1)"}}>
                             PWR: {move.power ? move.power : '0'}
                         </Text>
-                        <Text style={{fontSize: 20}}>
+                        <Text style={{fontSize: 20, color: state.theme.dark ? "rgba("+ (Math.floor(255 - ((move.power/100) * 255))) + ",255,"+ (Math.floor(255 - ((move.power/100) * 255))) + ",1)" : "rgba(0,"+ (Math.floor((move.power/100) * 255)) + ",0,1)" }}>
                             ACC: {move.accuracy ? move.accuracy : '0'}
                         </Text>
                     </View>
@@ -76,7 +76,8 @@ const Move = ({move}) => {
             {searchOpen ?
             
             <View style={{flexDirection:'row',width: window.width, margin: 5, borderColor:"rgba(0,0,0,0.3)", borderWidth: 2, borderRadius: 50}}>
-                <TextInput style={{paddingLeft:10,borderColor: transparent,flex: 20, height: 35, backgroundColor: "rgba(255,255,255,0)"}} onChangeText={searchList}/>
+                <TextInput placeholder='Pesquise por nome ou tipo!' placeholderTextColor={state.theme.colors.text} style={{paddingLeft:10,borderColor: transparent,flex: 20, height: 35, backgroundColor: "rgba(255,255,255,0)",color: state.theme.colors.text}} onChangeText={searchList}/>
+                
                 <Button style={{flex: 1, width: 35, height: 35, backgroundColor: "rgba(255,255,255,0)"}} icon="close" onPress={()=> toggleSearch()}>
                 </Button>
             </View>
