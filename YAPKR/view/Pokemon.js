@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
+import {FlatList, ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import {Avatar} from '@rneui/themed';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Context} from '../components/Context';
@@ -11,7 +11,11 @@ const Pokemon = ({route}) => {
     const {state, dispatch} = useContext(Context);
     const {pokemon} = route.params.pokemon;
     const color = getColor(pokemon.types[0].type.name);
-
+    function renderMove({item: move}){
+        return (
+            <Text>{move.name}</Text>
+        )
+    }
     return (
         <View style={{flex: 1}}>
             <View style={{borderRadius: 20, elevation: 100, overflow: 'hidden'}}>
@@ -23,7 +27,7 @@ const Pokemon = ({route}) => {
                 >
                     <View style={{alignItems: 'center', borderRadius: 50, marginTop: 20}}>
                         <View style={{alignItems: 'center'}}>
-                            <Avatar source={{uri: pokemon.sprites.other['official-artwork'].front_default}} size={200}/>
+                            <Avatar source={{uri: pokemon.sprites}} size={200}/>
                         </View>
                     </View>
                 </ImageBackground>
@@ -58,6 +62,22 @@ const Pokemon = ({route}) => {
                     </View>
                 </View>
             </ScrollView>
+                <View
+                style={{
+                    backgroundColor: state.theme.colors.card,
+                    flex: 1,
+                    borderRadius: 20,
+                    padding: 5,
+                    margin: 10,
+                }}
+                >
+                    <FlatList
+                    data={pokemon.moves}
+                    renderItem={renderMove}
+                    keyExtractor={(move) => move.id}
+                    maxToRenderPerBatch={30}
+                    />
+                </View>
             {!state.team.includes(pokemon)?
                 <TouchableOpacity onPress={()=> dispatch({type:'addToTeam', payload: pokemon})}>
                     <View style={[

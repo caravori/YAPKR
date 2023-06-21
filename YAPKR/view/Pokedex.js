@@ -68,7 +68,7 @@ const Pokedex = (props) => {
                         <GetTypes types={pokemon.types}/>
                     </ListItem.Content>
                     <View style={[styles.avatar, {backgroundColor: colors[0], borderColor: colors[1]}]}>
-                        <Avatar size={100} source={{uri: pokemon.sprites.other['official-artwork'].front_default}}/>
+                        <Avatar size={100} source={{uri: pokemon.sprites}}/>
                     </View>
                 </ListItem>
             </TouchableOpacity>
