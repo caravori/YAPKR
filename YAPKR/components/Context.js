@@ -54,7 +54,8 @@ async function requestMoves(pokemons){
                 let move = {
                     id: data.id,
                     name: data.name,
-                    damage_class: data.damage_class.name,
+                    description: data.flavor_text_entries.map((description)=>{if (description.language.name == 'en'){return description.flavor_text}})[0],
+                    accuracy: data.accuracy,
                     power: data.power,
                     type: data.type.name
                 }
@@ -146,7 +147,7 @@ const ContextProvider = (props) => {
             const loadedState = await loadCache()
             if(state.pokemons.length === 0){
                 const pokemons = await requestAPI(151);
-                dispatch({type: 'updatePokemon',payload: {pokemons}})
+                await dispatch({type: 'updatePokemon',payload: {pokemons}})
                 const moves = await requestMoves(pokemons);
                 dispatch({type: 'updateMoves',payload: {moves}})
             }

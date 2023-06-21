@@ -60,7 +60,7 @@ const Navigator = (props) => {
                                         onPress={()=> props.navigation.navigate(ItemList,props)}/>
                             <DrawerItem label={()=>
                                 <Text style={[Style.Text,{color:state.theme.colors.text}]}>Lista de Movimentos</Text> }
-                                        onPress={()=> props.navigation.navigate('Movimentos',props)}/>
+                                        onPress={()=> props.navigation.navigate('Movimentos')}/>
                         </DrawerSection>
                         <View
                             style={{

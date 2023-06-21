@@ -62,22 +62,6 @@ const Pokemon = ({route}) => {
                     </View>
                 </View>
             </ScrollView>
-                <View
-                style={{
-                    backgroundColor: state.theme.colors.card,
-                    flex: 1,
-                    borderRadius: 20,
-                    padding: 5,
-                    margin: 10,
-                }}
-                >
-                    <FlatList
-                    data={pokemon.moves}
-                    renderItem={renderMove}
-                    keyExtractor={(move) => move.id}
-                    maxToRenderPerBatch={30}
-                    />
-                </View>
             {!state.team.includes(pokemon)?
                 <TouchableOpacity onPress={()=> dispatch({type:'addToTeam', payload: pokemon})}>
                     <View style={[

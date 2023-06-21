@@ -18,11 +18,6 @@ const Pokedex = (props) => {
     const [searchValue, setSearchValue] = useState('');
     const [pokemonList, setPokemonList] = useState(state.pokemons);
     const [searchOpen, setSearchOpen] = useState(false);
-    useEffect(
-        ()=>{
-            setPokemonList(state.pokemons)
-        }
-        ,[state.pokemons]);
 
     function GetTypes({types: types}) {
         let colors1 = getColor(types[0].type.name)
@@ -85,7 +80,7 @@ const Pokedex = (props) => {
     }
     useEffect(()=>{
         setPokemonList(state.pokemons);
-    },[]);
+    },[state.pokemons]);
 
     function toggleSearch(){
         searchList('');
