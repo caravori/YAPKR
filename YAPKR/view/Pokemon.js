@@ -11,7 +11,6 @@ const Pokemon = ({route}) => {
     const {state, dispatch} = useContext(Context);
     const {pokemon} = route.params.pokemon;
     const color = getColor(pokemon.types[0].type.name);
-
     return (
         <View style={{flex: 1}}>
             <View style={{borderRadius: 20, elevation: 100, overflow: 'hidden'}}>
@@ -23,7 +22,7 @@ const Pokemon = ({route}) => {
                 >
                     <View style={{alignItems: 'center', borderRadius: 50, marginTop: 20}}>
                         <View style={{alignItems: 'center'}}>
-                            <Avatar source={{uri: pokemon.sprites.other['official-artwork'].front_default}} size={200}/>
+                            <Avatar source={{uri: pokemon.sprites}} size={200}/>
                         </View>
                     </View>
                 </ImageBackground>

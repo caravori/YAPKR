@@ -73,7 +73,7 @@ const PokemonListItem = ({pokemon, action}) => {
                     <Avatar
                         size={100}
                         source={{
-                            uri: pokemon.sprites.other["official-artwork"].front_default,
+                            uri: pokemon.sprites,
                         }}
                     />
                 </View>

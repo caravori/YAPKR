@@ -10,7 +10,8 @@ const initialState = {
     isDark: false,
     icon: 'sun-o',
     pokemons: [],
-    team: []
+    team: [],
+    moves: []
 };
 
 const reducer = (state, action) => {
@@ -33,6 +34,41 @@ async function loadCache(){
 
     }
 }
+
+async function requestMoves(pokemons){
+    try {
+        let moves = [];
+        let moveUrlSet = new Set();
+        for(let pokemon of pokemons){
+            for(let move of pokemon.moves){
+                moveUrlSet.add(move);
+            }
+        }
+        let moveArray = Array.from(moveUrlSet);
+        for(let move of moveArray){
+            await axios({
+                method: 'get',
+                url: move
+            }).then((resp)=>{
+                let data = resp.data
+                let move = {
+                    id: data.id,
+                    name: data.name,
+                    description: data.flavor_text_entries.map((description)=>{if (description.language.name == 'en'){return description.flavor_text}})[0],
+                    accuracy: data.accuracy,
+                    power: data.power,
+                    type: data.type.name
+                }
+                moves.push(move);
+            })
+        }
+        return moves;
+
+    } catch(e){
+        console.error(e)
+    }
+}
+
 async function requestAPI(numberPokemons){
     try {
         let response = [];
@@ -42,13 +78,24 @@ async function requestAPI(numberPokemons){
                 url: baseUrl+i,
             }).then((resp)=>{
                 let data = resp.data;
-                delete data.game_indices ;
-                delete data.sprites.versions
-                delete data.moves
-                response.push(data);
+                let moves = data.moves.map(move=>{return move.move.url});
+                
+                let pokemon = {
+                    id: data.id,
+                    name: data.name,
+                    height: data.height,
+                    abilities: data.abilities,
+                    sprites: data.sprites.other['official-artwork'].front_default ,
+                    types: data.types,
+                    stats: data.stats,
+                    weight: data.weight,
+                    moves: moves
+                }
+
+                response.push(pokemon);
             })
         }
-        return response;
+        return response
     } catch(e) {
         console.error(e);
     }
@@ -56,7 +103,6 @@ async function requestAPI(numberPokemons){
 const actions = {
     load(state,action){
         const loadedCache = action.payload;
-        console.log(loadedCache)
         return {...loadedCache.state}
     },
     updatePokemon(state,action){
@@ -65,9 +111,15 @@ const actions = {
         saveCache(updatedState);
         return updatedState
     },
+    updateMoves(state,action){
+        const updated = action.payload;
+        const updatedState = {...state, moves: updated.moves}
+        saveCache(updatedState);
+        return updatedState
+    },
     addToTeam(state,action){
         const pokemon = action.payload;
-        if(state.team.length > 5)
+        if(state.team.length > 6)
             return;
         const updatedState = {...state,team: [...state.team,pokemon]}
         saveCache(updatedState);
@@ -95,7 +147,9 @@ const ContextProvider = (props) => {
             const loadedState = await loadCache()
             if(state.pokemons.length === 0){
                 const pokemons = await requestAPI(151);
-                dispatch({type: 'updatePokemon',payload: {pokemons}})
+                await dispatch({type: 'updatePokemon',payload: {pokemons}})
+                const moves = await requestMoves(pokemons);
+                dispatch({type: 'updateMoves',payload: {moves}})
             }
             else {
                 dispatch({type: 'load', payload: loadedState});
