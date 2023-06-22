@@ -10,7 +10,6 @@ import {ListItem} from "@rneui/themed";
 
 const ItemList = () => {
     const {state, dispatch} = useContext(Context);
-    const [searchValue, setSearchValue] = useState('');
     const [item, setItemList] = useState(itemData);
     const [searchOpen, setSearchOpen] = useState(false);
     useEffect(
