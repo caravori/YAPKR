@@ -14,7 +14,6 @@ export function getColor(type) {
 
 const Move = ({move}) => {
     const {state, dispatch} = useContext(Context);
-    const [searchValue, setSearchValue] = useState('');
     const [moveList, setMoveList] = useState(state.moves);
     const [searchOpen, setSearchOpen] = useState(false);
     useEffect(() => {
@@ -68,7 +67,7 @@ const Move = ({move}) => {
                         </Text>
                         <Text style={{
                             fontSize: 20,
-                            color: state.theme.dark ? "rgba(" + (Math.floor(255 - ((move.power / 100) * 255))) + ",255," + (Math.floor(255 - ((move.power / 100) * 255))) + ",1)" : "rgba(0," + (Math.floor((move.power / 100) * 255)) + ",0,1)"
+                            color: state.theme.dark ? "rgba(" + (Math.floor(255 - ((move.accuracy / 100) * 255))) + ",255," + (Math.floor(255 - ((move.accuracy / 100) * 255))) + ",1)" : "rgba(0," + (Math.floor((move.accuracy / 100) * 255)) + ",0,1)"
                         }}>
                             ACC: {move.accuracy ? move.accuracy : '0'}
                         </Text>

@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabf471b-acca-4e95-b578-fa8f55d47b74" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/YAPKR/view/Nature.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/components/Context.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/components/Context.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/json/json_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/json/json_data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/view/ItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/ItemList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/view/MoveList.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/MoveList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/view/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Navigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +41,7 @@
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Natures",
     "last_opened_file_path": "/home/caravori/faculdade/YAPKR/YAPKR/assets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -95,7 +97,9 @@
       <workItem from="1687283380260" duration="883000" />
       <workItem from="1687284298607" duration="416000" />
       <workItem from="1687285733829" duration="3010000" />
-      <workItem from="1687355028923" duration="6230000" />
+      <workItem from="1687355028923" duration="6587000" />
+      <workItem from="1687450600350" duration="36000" />
+      <workItem from="1687450888882" duration="3300000" />
     </task>
     <servers />
   </component>

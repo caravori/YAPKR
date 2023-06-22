@@ -13,6 +13,7 @@ import Pokemon from "./Pokemon";
 import ItemList from "./ItemList";
 import Move from "./MoveList";
 import Login from "./Login";
+import Nature from "./Nature";
 
 
 const Stack = createNativeStackNavigator();
@@ -61,10 +62,13 @@ const Navigator = (props) => {
                                         onPress={() => props.navigation.navigate("Meu time")}/>
                             <DrawerItem label={()=>
                                 <Text style={[Style.Text,{color:state.theme.colors.text}]}>Lista de Itens</Text> }
-                                        onPress={()=> props.navigation.navigate('Lista de Itens',props)}/>
+                                        onPress={()=> props.navigation.navigate('Lista de Itens')}/>
                             <DrawerItem label={()=>
                                 <Text style={[Style.Text,{color:state.theme.colors.text}]}>Lista de Movimentos</Text> }
                                         onPress={()=> props.navigation.navigate('Movimentos')}/>
+                            <DrawerItem label={()=>
+                                <Text style={[Style.Text,{color:state.theme.colors.text}]}>Naturezas</Text> }
+                                        onPress={()=> props.navigation.navigate('Naturezas')}/>
                         </DrawerSection>
                         <View
                             style={{
@@ -90,6 +94,7 @@ const Navigator = (props) => {
                 <Drawer.Screen name='Lista de Itens' component={ItemList}/>
                 <Drawer.Screen name='Movimentos' component={Move}/>
                 <Drawer.Screen name='Login' component={Login}/>
+                <Drawer.Screen name='Naturezas' component={Nature}/>
             </Drawer.Navigator>
         </NavigationContainer>
     );
