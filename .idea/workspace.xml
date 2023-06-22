@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabf471b-acca-4e95-b578-fa8f55d47b74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/YAPKR/view/Nature.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/json/json_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/json/json_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/ItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/ItemList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/MoveList.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/MoveList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/components/Context.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/components/Context.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/view/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/view/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Navigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +42,7 @@
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Natures",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/caravori/faculdade/YAPKR/YAPKR/assets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

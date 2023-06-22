@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "266648132391",
+    "project_id": "yatpk-auth",
+    "storage_bucket": "yatpk-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266648132391:android:f75fbf9bb1b33ad37b2702",
+        "android_client_info": {
+          "package_name": "com.caravori.YAPKR"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266648132391-p8ae5ul7vqmsnkc84q9njl719c8qdju0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAujiYh5uLLq7PIpbgbhDTsLBnS-XcHdHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266648132391-3gi1hs08o9tub8j4i2qt5nijk793cavk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

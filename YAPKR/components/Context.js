@@ -2,7 +2,10 @@ import React, {createContext, useEffect, useReducer} from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {DarkTheme, DefaultTheme} from "@react-navigation/native";
 import axios from "axios";
-import { pokeData, moveData } from "../json/json_data";
+import {moveData, pokeData} from "../json/json_data";
+import {GoogleSignin} from "@react-native-google-signin/google-signin";
+import auth from "@react-native-firebase/auth";
+
 const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 const Context = createContext({});
 
@@ -13,13 +16,17 @@ const initialState = {
     pokemons: [],
     team: [],
     moves: [],
-    itens: []
+    itens: [],
+    initializing: true,
+
 };
+
 
 const reducer = (state, action) => {
     const fn = actions[action.type];
     return !fn ? state : fn(state, action);
 };
+
 
 async function saveCache(state) {
     try {
@@ -154,10 +161,17 @@ const actions = {
         saveCache({...state, theme: toggle, icon: moon, isDark: isDark});
         return {...state, theme: toggle, icon: moon};
     },
+    onAuthStateChanged(state,action){
+        const user = action.payload;
+        return{...state, user: user, initializing: !state.initializing}
+    }
 };
 
 const ContextProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
+    GoogleSignin.configure({
+        WebClientId: "266648132391-p8ae5ul7vqmsnkc84q9njl719c8qdju0.apps.googleusercontent.com",
+    })
     useEffect(() => {
         async function fetchData() {
             const loadedState = await loadCache()
@@ -170,10 +184,15 @@ const ContextProvider = (props) => {
                 dispatch({type: 'load', payload: loadedState});
             }
         }
-
         fetchData();
     }, [])
     loadCache()
+
+    useEffect(() => {
+        return auth().onAuthStateChanged(user =>(dispatch({type:'onAuthStateChanged',payload:user}))); // unsubscribe on unmount
+    }, []);
+
+
     return (
         <Context.Provider value={{state, dispatch}}>
             {props.children}
