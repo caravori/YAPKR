@@ -2,7 +2,7 @@ import React, {createContext, useEffect, useReducer} from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {DarkTheme, DefaultTheme} from "@react-navigation/native";
 import axios from "axios";
-
+import { pokeData, moveData } from "../json/json_data";
 const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 const Context = createContext({});
 
@@ -39,6 +39,9 @@ async function loadCache() {
 }
 
 async function requestMoves(pokemons) {
+    if(moveData.length !== 0){
+        return moveData;
+    }
     try {
         let moves = [];
         let moveUrlSet = new Set();
@@ -66,6 +69,7 @@ async function requestMoves(pokemons) {
                     power: data.power,
                     type: data.type.name
                 }
+                console.log('oi');
                 moves.push(move);
             })
         }
@@ -77,6 +81,9 @@ async function requestMoves(pokemons) {
 }
 
 async function requestAPI(numberPokemons) {
+    if(pokeData.length !== 0 ){
+        return pokeData;
+    }
     try {
         let response = [];
         for (let i = 1; i < numberPokemons + 1; i++) {
@@ -88,7 +95,6 @@ async function requestAPI(numberPokemons) {
                 let moves = data.moves.map(move => {
                     return move.move.url
                 });
-
                 let pokemon = {
                     id: data.id,
                     name: data.name,

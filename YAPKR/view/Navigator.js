@@ -12,6 +12,7 @@ import PokemonTeam from "./PokemonTeam";
 import Pokemon from "./Pokemon";
 import ItemList from "./ItemList";
 import Move from "./MoveList";
+import Login from "./Login";
 
 
 const Stack = createNativeStackNavigator();
@@ -32,19 +33,22 @@ const Navigator = (props) => {
                         <Image style={{width: 120, height: 120, alignSelf: 'center', marginTop: 15, marginBottom: 10}}
                                source={{uri: 'https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png'}}/>
                         <DrawerSection showDivider={false} style={{borderBottomColor: 'red', borderBottomWidth: 2}}>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={()=> props.navigation.navigate('Login')}>
                                 <View style={{
                                     borderRadius: 10,
-                                    backgroundColor: 'red',
+                                    backgroundColor: 'rgba(0,0,0,0)',
                                     marginLeft: 20,
                                     marginBottom: 20,
-                                    width: 60,
+                                    width: 80,
                                     height: 40,
                                     flex: 1,
                                     alignItems: 'center',
-                                    justifyContent: 'center'
+                                    justifyContent: 'center',
+                                    borderWidth: 2,
+                                    borderColor: 'red',
                                 }}>
-                                    <Text style={[Style.Text, {fontWeight: 'bold'}]}>Login</Text>
+                                    <Text style={[Style.Text, {fontWeight: 'bold',color: state.theme.colors.text}]}>Login</Text>
                                 </View>
                             </TouchableOpacity>
                         </DrawerSection>
@@ -85,6 +89,7 @@ const Navigator = (props) => {
                 <Drawer.Screen name='Pokemon' component={Pokemon}/>
                 <Drawer.Screen name='Lista de Itens' component={ItemList}/>
                 <Drawer.Screen name='Movimentos' component={Move}/>
+                <Drawer.Screen name='Login' component={Login}/>
             </Drawer.Navigator>
         </NavigationContainer>
     );
