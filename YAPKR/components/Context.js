@@ -18,7 +18,7 @@ const initialState = {
     moves: [],
     itens: [],
     initializing: true,
-
+    logged: true
 };
 
 
@@ -163,7 +163,7 @@ const actions = {
     },
     onAuthStateChanged(state,action){
         const user = action.payload;
-        return{...state, user: user, initializing: !state.initializing}
+        return{...state, user: user, initializing: !state.initializing, logged: user !== null}
     }
 };
 

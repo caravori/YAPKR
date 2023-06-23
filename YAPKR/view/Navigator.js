@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Pokedex from "./Pokedex";
@@ -14,15 +14,32 @@ import ItemList from "./ItemList";
 import Move from "./MoveList";
 import Login from "./Login";
 import Nature from "./Nature";
+import {Avatar} from "@rneui/themed";
+import {GoogleSignin} from "@react-native-google-signin/google-signin";
+import auth from "@react-native-firebase/auth";
 
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 
+
+
+
+
 const Navigator = (props) => {
     const {state, dispatch} = useContext(Context)
     const [isDarkTheme, setIsDarkTheme] = useState(state.isDark);
+    console.log(state.logged)
+    console.log(state.user)
+    const signOut = async () => {
+        try {
+            await GoogleSignin.signOut();
+            dispatch({type:'onAuthStateChanged' ,payload: null }); // Remember to remove the user from your app's state as well
+        } catch (error) {
+            console.error(error);
+        }
+    };
     const toggleTheme = () => {
         setIsDarkTheme(!isDarkTheme);
         dispatch({type: 'toggleTheme'})
@@ -34,27 +51,69 @@ const Navigator = (props) => {
                     <Image style={{width: 120, height: 120, alignSelf: 'center', marginTop: 15, marginBottom: 10}}
                            source={{uri: 'https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png'}}/>
                     <DrawerSection showDivider={false} style={{borderBottomColor: 'red', borderBottomWidth: 2}}>
-                        <TouchableOpacity
-                            onPress={() => props.navigation.navigate('Login')}>
-                            <View style={{
-                                borderRadius: 10,
-                                backgroundColor: 'rgba(0,0,0,0)',
-                                marginLeft: 20,
-                                marginBottom: 20,
-                                width: 80,
-                                height: 40,
-                                flex: 1,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                borderWidth: 2,
-                                borderColor: 'red',
-                            }}>
-                                <Text style={[Style.Text, {
-                                    fontWeight: 'bold',
-                                    color: state.theme.colors.text
-                                }]}>Login</Text>
-                            </View>
-                        </TouchableOpacity>
+                        <View style={{
+                            flexDirection: 'row',
+                            marginLeft: 10,
+                            alignItems: 'center',
+                            flex: 1,
+                            paddingBottom: 10
+                        }}>
+                            {state.logged ?
+                                <>
+                                    <Avatar source={{uri: state.user?.photoURL}} size={50} rounded/>
+                                    <Text style={[Style.Text, {
+                                        fontWeight: 'bold',
+                                        color: state.theme.colors.text, marginLeft: 10
+                                    }]}>{state.user?.displayName.split(' ')[0]}
+                                    </Text>
+                                    <TouchableOpacity
+                                        onPress={() => signOut()}>
+                                        <View style={{
+                                            borderRadius: 10,
+                                            backgroundColor: 'rgba(0,0,0,0)',
+                                            width: 80,
+                                            maxHeight: 40,
+                                            flex: 1,
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+
+                                            borderWidth: 2,
+                                            borderColor: 'red',
+                                        }}>
+
+                                            <Text style={[Style.Text, {
+                                                fontWeight: 'bold',
+                                                color: state.theme.colors.text
+                                            }]}>Logout</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                </>
+                                :
+
+                                <TouchableOpacity
+                                    onPress={() => props.navigation.navigate('Login')}>
+                                    <View style={{
+                                        borderRadius: 10,
+                                        backgroundColor: 'rgba(0,0,0,0)',
+                                        marginLeft: 20,
+                                        marginBottom: 20,
+                                        width: 80,
+                                        height: 40,
+                                        flex: 1,
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        borderWidth: 2,
+                                        borderColor: 'red',
+                                    }}>
+
+                                        <Text style={[Style.Text, {
+                                            fontWeight: 'bold',
+                                            color: state.theme.colors.text
+                                        }]}>Login</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            }
+                        </View>
                     </DrawerSection>
                     <DrawerSection style={{borderBottomColor: 'red', borderBottomWidth: 2}} showDivider={false}>
                         <DrawerItem label={() =>

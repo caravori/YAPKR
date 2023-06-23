@@ -17,7 +17,6 @@ const Pokedex = (props) => {
     const {state} = useContext(Context);
     const [pokemonList, setPokemonList] = useState(state.pokemons);
     const [searchOpen, setSearchOpen] = useState(false);
-
     function GetTypes({types: types}) {
         let colors1 = getColor(types[0].type.name)
         let colors2;
