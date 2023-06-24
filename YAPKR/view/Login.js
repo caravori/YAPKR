@@ -35,6 +35,7 @@ const Login = (props) => {
             </View>
         </View>
     )
+
 }
 
 const styles = StyleSheet.create({
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-evenly',
         marginBottom: 150
+
     }
 })
 
