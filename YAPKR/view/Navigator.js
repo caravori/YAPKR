@@ -30,8 +30,6 @@ const Drawer = createDrawerNavigator();
 const Navigator = (props) => {
     const {state, dispatch} = useContext(Context)
     const [isDarkTheme, setIsDarkTheme] = useState(state.isDark);
-    console.log(state.logged)
-    console.log(state.user)
     const signOut = async () => {
         try {
             await GoogleSignin.signOut();
@@ -60,11 +58,11 @@ const Navigator = (props) => {
                         }}>
                             {state.logged ?
                                 <>
-                                    <Avatar source={{uri: state.user?.photoURL}} size={50} rounded/>
+                                    <Avatar source={{uri:state.user?.photoURL? state.user?.photoURL: state.user?.user?.photo}} size={50} rounded/>
                                     <Text style={[Style.Text, {
                                         fontWeight: 'bold',
                                         color: state.theme.colors.text, marginLeft: 10
-                                    }]}>{state.user?.displayName.split(' ')[0]}
+                                    }]}>{state.user?.displayName?.split(' ')[0]? state.user?.displayName?.split(' ')[0]: state.user?.user?.givenName }
                                     </Text>
                                     <TouchableOpacity
                                         onPress={() => signOut()}>
@@ -91,7 +89,7 @@ const Navigator = (props) => {
                                 :
 
                                 <TouchableOpacity
-                                    onPress={() => props.navigation.navigate('Login')}>
+                                    onPress={() => props.navigation.navigate('Login',props)}>
                                     <View style={{
                                         borderRadius: 10,
                                         backgroundColor: 'rgba(0,0,0,0)',

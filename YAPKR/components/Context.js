@@ -76,7 +76,6 @@ async function requestMoves(pokemons) {
                     power: data.power,
                     type: data.type.name
                 }
-                console.log('oi');
                 moves.push(move);
             })
         }
@@ -188,10 +187,9 @@ const ContextProvider = (props) => {
     }, [])
     loadCache()
 
-    useEffect(() => {
+   useEffect(() => {
         return auth().onAuthStateChanged(user =>(dispatch({type:'onAuthStateChanged',payload:user}))); // unsubscribe on unmount
     }, []);
-
 
     return (
         <Context.Provider value={{state, dispatch}}>
