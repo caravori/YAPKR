@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import {Avatar} from '@rneui/themed';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -10,7 +10,22 @@ import {FontAwesome} from "@expo/vector-icons";
 const Pokemon = ({route}) => {
     const {state, dispatch} = useContext(Context);
     const {pokemon} = route.params.pokemon;
+    console.log(route)
+    const [pokeOnTeam, setPokeOnTeam] = useState(false);
     const color = getColor(pokemon.types[0].type.name);
+    console.log(state.team.filter((poke)=>poke.id === pokemon.id).length)
+
+    function pokemonOnTeam(){
+        for(let poke of state.team){
+            if(poke.id === pokemon.id){
+                setPokeOnTeam(true);
+                return;
+            }
+            setPokeOnTeam(false);
+        }
+    }
+
+
     return (
         <View style={{flex: 1}}>
             <View style={{borderRadius: 20, elevation: 100, overflow: 'hidden'}}>
@@ -57,16 +72,16 @@ const Pokemon = ({route}) => {
                     </View>
                 </View>
             </ScrollView>
-            {!state.team.includes(pokemon)?
-                <TouchableOpacity onPress={()=> dispatch({type:'addToTeam', payload: pokemon})}>
+            {!state.team.filter((poke)=>poke.id === pokemon.id).length == 1 ?
+                <TouchableOpacity onPress={()=> {dispatch({type:'addToTeam', payload: pokemon }); setPokeOnTeam(true)}}>
                     <View style={[
                         {backgroundColor: color[0]},
                         styles.floatingButtom
                     ]}>
                         <FontAwesome name={'plus'} size={30} color={'rgba(69,69,69,0.77)'}/>
                     </View>
-                </TouchableOpacity>:
-                <TouchableOpacity onPress={()=> dispatch({type:'removeFromTeam', payload: pokemon})}>
+                </TouchableOpacity> :
+                <TouchableOpacity onPress={()=> {dispatch({type:'removeFromTeam', payload: pokemon}); setPokeOnTeam(false)}}>
                     <View style={[
                         {backgroundColor: color[0]},
                         styles.floatingButtom

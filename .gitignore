@@ -13,7 +13,7 @@ yatpk-auth-firebase-adminsdk-9jqry-ad860aff1a.json
 firebaseConfig.js
 
 # macOS
-.DS_Store
+.DS_Storz
 
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
