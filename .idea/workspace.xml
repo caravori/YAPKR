@@ -9,10 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cabf471b-acca-4e95-b578-fa8f55d47b74" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/components/Context.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/components/Context.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Navigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YAPKR/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,7 @@
       <workItem from="1687450600350" duration="36000" />
       <workItem from="1687450888882" duration="3300000" />
       <workItem from="1687518477820" duration="9590000" />
-      <workItem from="1687619682523" duration="4077000" />
+      <workItem from="1687619682523" duration="7501000" />
     </task>
     <servers />
   </component>

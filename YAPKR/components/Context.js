@@ -5,6 +5,9 @@ import axios from "axios";
 import {moveData, pokeData} from "../json/json_data";
 import {GoogleSignin} from "@react-native-google-signin/google-signin";
 import auth from "@react-native-firebase/auth";
+import {db} from "../firebaseConfig";
+import {ref, set} from "firebase/database";
+
 
 const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 const Context = createContext({});
@@ -46,7 +49,7 @@ async function loadCache() {
 }
 
 async function requestMoves(pokemons) {
-    if(moveData.length !== 0){
+    if (moveData.length !== 0) {
         return moveData;
     }
     try {
@@ -87,7 +90,7 @@ async function requestMoves(pokemons) {
 }
 
 async function requestAPI(numberPokemons) {
-    if(pokeData.length !== 0 ){
+    if (pokeData.length !== 0) {
         return pokeData;
     }
     try {
@@ -144,6 +147,23 @@ const actions = {
         if (state.team.length > 6)
             return;
         const updatedState = {...state, team: [...state.team, pokemon]}
+        const currentUser = auth().currentUser;
+        if (currentUser && currentUser.uid) {
+            const userId = currentUser.uid;
+            const pokemonId = pokemon.id;
+            set(ref(db, `users/${userId}/team/${pokemonId}`), true)
+                .then(() => {
+                    console.log('ID do Pokémon salvo com sucesso no banco de dados!');
+                })
+                .catch((error) => {
+                    console.log('Erro ao salvar o ID do Pokémon no banco de dados:', error);
+                });
+        } else {
+            console.log('Usuário não autenticado');
+        }
+
+        console.log('ta chegando aqui')
+
         saveCache(updatedState);
         return updatedState;
     },
@@ -160,9 +180,9 @@ const actions = {
         saveCache({...state, theme: toggle, icon: moon, isDark: isDark});
         return {...state, theme: toggle, icon: moon};
     },
-    onAuthStateChanged(state,action){
+    onAuthStateChanged(state, action) {
         const user = action.payload;
-        return{...state, user: user, initializing: !state.initializing, logged: user !== null}
+        return {...state, user: user, initializing: !state.initializing, logged: user !== null}
     }
 };
 
@@ -183,12 +203,13 @@ const ContextProvider = (props) => {
                 dispatch({type: 'load', payload: loadedState});
             }
         }
+
         fetchData();
     }, [])
     loadCache()
 
-   useEffect(() => {
-        return auth().onAuthStateChanged(user =>(dispatch({type:'onAuthStateChanged',payload:user}))); // unsubscribe on unmount
+    useEffect(() => {
+        return auth().onAuthStateChanged(user => (dispatch({type: 'onAuthStateChanged', payload: user}))); // unsubscribe on unmount
     }, []);
 
     return (
