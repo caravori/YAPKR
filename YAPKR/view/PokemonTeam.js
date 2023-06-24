@@ -1,14 +1,19 @@
 import React, {useContext} from "react";
-import {FlatList, View} from "react-native";
+import {FlatList, TouchableOpacity, View} from "react-native";
 import {Context} from "../components/Context";
 import PokemonListItem from "./PokemonListItem";
 
-const PokemonTeam = () => {
+const PokemonTeam = (props) => {
     const {state, dispatch} = useContext(Context);
 
-    function renderItem({item: pokemon}) {
+    function renderItem({item: pokemonF}) {
+        console.log(state.pokemons.filter((poke)=>poke.id === pokemonF.id)[0])
+        const pokemon = state.pokemons.filter((poke)=>poke.id == pokemonF.id)[0]
         return (
-            <PokemonListItem action={''} pokemon={pokemon}/>
+                <TouchableOpacity onPress={()=>props.navigation.navigate('Pokemon', {pokemon: {pokemon}})}>
+                <PokemonListItem pokemon={pokemonF}/>
+            </TouchableOpacity>
+
         )
     }
 

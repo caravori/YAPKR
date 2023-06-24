@@ -105,7 +105,7 @@ const Pokedex = (props) => {
                             icon="close" onPress={() => toggleSearch()}>
                     </Button>
                 </View> : ''}
-            {state.pokemons.length ? (<>
+            {state.pokemons.length  ? (<>
                     <FlatList
                         data={pokemonList}
                         renderItem={getPokemons}
