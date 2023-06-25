@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "YAPKR",
-    "slug": "YAPKR",
+    "slug": "yapkr",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -30,7 +30,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "5d66eb00-45c8-4244-894a-df1e7ba55353"
+        "projectId": "6acb6347-fd12-4b42-9e66-ac71f160429f"
       }
     },
     "plugins": ["@react-native-google-signin/google-signin"]
