@@ -7,10 +7,9 @@ const PokemonTeam = (props) => {
     const {state, dispatch} = useContext(Context);
 
     function renderItem({item: pokemonF}) {
-        console.log(state.pokemons.filter((poke)=>poke.id === pokemonF.id)[0])
         const pokemon = state.pokemons.filter((poke)=>poke.id == pokemonF.id)[0]
         return (
-                <TouchableOpacity onPress={()=>props.navigation.navigate('Pokemon', {pokemon: {pokemon}})}>
+                <TouchableOpacity onPress={()=>props.navigation.navigate('Pokemon',  {pokemon})}>
                 <PokemonListItem pokemon={pokemonF}/>
             </TouchableOpacity>
 

@@ -9,11 +9,9 @@ import {FontAwesome} from "@expo/vector-icons";
 
 const Pokemon = ({route}) => {
     const {state, dispatch} = useContext(Context);
-    const {pokemon} = route.params.pokemon;
-    console.log(route)
+    const {pokemon} = route.params;
     const [pokeOnTeam, setPokeOnTeam] = useState(false);
     const color = getColor(pokemon.types[0].type.name);
-    console.log(state.team.filter((poke)=>poke.id === pokemon.id).length)
 
     function pokemonOnTeam(){
         for(let poke of state.team){
