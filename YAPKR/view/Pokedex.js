@@ -47,7 +47,7 @@ const Pokedex = (props) => {
 
     function getPokemons({item: pokemon}) {
         let colors = getColor(pokemon.types[0].type.name)
-        return (<TouchableOpacity onPress={() => props.navigation.navigate("Pokemon", {pokemon})}>
+        return (<TouchableOpacity onPress={() => props.navigation.navigate("Pokemon",  {pokemon})}>
                 <ListItem containerStyle={[styles.cardStyle, {backgroundColor: state.theme.colors.card}]}>
                     <ListItem.Content>
                         <ListItem.Title style={[styles.ListTitle, {color: state.theme.colors.text}]}>

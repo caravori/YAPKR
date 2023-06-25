@@ -8,14 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cabf471b-acca-4e95-b578-fa8f55d47b74" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/YAPKR/components/DrawerContent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YAPKR/components/DrawerItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Navigator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokedex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/Pokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/Pokemon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/PokemonListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/PokemonListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YAPKR/view/PokemonTeam.js" beforeDir="false" afterPath="$PROJECT_DIR$/YAPKR/view/PokemonTeam.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +104,7 @@
       <workItem from="1687450888882" duration="3300000" />
       <workItem from="1687518477820" duration="9590000" />
       <workItem from="1687619682523" duration="21692000" />
-      <workItem from="1687705553176" duration="5127000" />
+      <workItem from="1687705553176" duration="5840000" />
     </task>
     <servers />
   </component>
