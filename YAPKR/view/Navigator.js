@@ -16,7 +16,7 @@ import Login from "./Login";
 import Nature from "./Nature";
 import {Avatar} from "@rneui/themed";
 import {GoogleSignin} from "@react-native-google-signin/google-signin";
-
+import * as ALL from '../assets';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -41,8 +41,8 @@ const Navigator = (props) => {
         return (
             <>
                 <DrawerContentScrollView {...props} >
-                    <Image style={{width: 120, height: 120, alignSelf: 'center', marginTop: 15, marginBottom: 10}}
-                           source={{uri: 'https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png'}}/>
+                    <Image style={{width: 200, height: 200, alignSelf: 'center', marginTop: 15, marginBottom: 10}}
+                           source={ALL[`${state.theme.dark ? 'logoDark' : 'logoLight'}`]}/>
                     <DrawerSection showDivider={false} style={{borderBottomColor: 'red', borderBottomWidth: 2}}>
                         <View style={{
                             flexDirection: 'row',

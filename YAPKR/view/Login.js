@@ -4,11 +4,11 @@ import {GoogleSignin, GoogleSigninButton} from '@react-native-google-signin/goog
 import auth from '@react-native-firebase/auth';
 import {FontAwesome} from "@expo/vector-icons";
 import {Context} from "../components/Context";
-
+import * as ALL from '../assets';
 
 
 const Login = (props) => {
-    const {dispatch} = useContext(Context);
+    const {state, dispatch} = useContext(Context);
     async function onGoogleButtonPress() {
 
         await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
@@ -24,8 +24,8 @@ const Login = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.content}>
-                <Image style={{width: 120, height: 120, alignSelf: 'center', marginTop: 15, marginBottom: 10}}
-                       source={{uri: 'https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849_1280.png'}}/>
+                <Image style={{width: 300, height: 300, alignSelf: 'center', marginTop: 15, marginBottom: 10}}
+                       source={ALL[`${state.theme.dark ? 'logoDark' : 'logoLight'}`]}/>
                 <GoogleSigninButton
                     size={GoogleSigninButton.Size.Standard}
                     color={GoogleSigninButton.Color.Dark}
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         height: 300,
         flexDirection: 'column',
         justifyContent: 'space-evenly',
+        alignItems: 'center',
         marginBottom: 150
 
     }
