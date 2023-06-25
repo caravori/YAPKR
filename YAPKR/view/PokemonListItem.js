@@ -15,30 +15,30 @@ const PokemonListItem = ({pokemon}) => {
             colors2 = getColor(types[1].type.name);
 
             return (<View style={{flexDirection: "row"}}>
-                    <View
-                        style={[styles.types, {backgroundColor: "#00000026", borderWidth: 0},]}
-                    >
-                        <ListItem.Subtitle style={styles.textTypes}>
-                            {types[0].type.name.toUpperCase()}
-                        </ListItem.Subtitle>
-                    </View>
-
-                    <View
-                        style={[styles.types, {backgroundColor: colors2[0], borderColor: colors2[1]},]}
-                    >
-                        <ListItem.Subtitle style={styles.textTypes}>
-                            {types[1].type.name.toUpperCase()}
-                        </ListItem.Subtitle>
-                    </View>
-                </View>);
-        } else {
-            return (<View
-                    style={[styles.types, {backgroundColor: colors1[0], borderColor: colors1[1]},]}
+                <View
+                    style={[styles.types, {backgroundColor: "#00000026", borderWidth: 0},]}
                 >
                     <ListItem.Subtitle style={styles.textTypes}>
                         {types[0].type.name.toUpperCase()}
                     </ListItem.Subtitle>
-                </View>);
+                </View>
+
+                <View
+                    style={[styles.types, {backgroundColor: colors2[0], borderColor: colors2[1]},]}
+                >
+                    <ListItem.Subtitle style={styles.textTypes}>
+                        {types[1].type.name.toUpperCase()}
+                    </ListItem.Subtitle>
+                </View>
+            </View>);
+        } else {
+            return (<View
+                style={[styles.types, {backgroundColor: colors1[0], borderColor: colors1[1]},]}
+            >
+                <ListItem.Subtitle style={styles.textTypes}>
+                    {types[0].type.name.toUpperCase()}
+                </ListItem.Subtitle>
+            </View>);
         }
     }
 
